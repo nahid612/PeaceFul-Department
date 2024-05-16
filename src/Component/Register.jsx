@@ -1,18 +1,54 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
-import { useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import { FaRegEye , FaRegEyeSlash } from "react-icons/fa6";
+
 
 const Register = () => {
   const { createUser } = useContext(AuthContext);
-  console.log(createUser);
+  const [registerError, setRegisterError] = useState("");
+  const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false)
 
-  // react-hook-form
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm();
-  const onSubmit = (data) => console.log(data);
+
+  // console.log(createUser);
+
+ 
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(e.currentTarget);
+    const form = new FormData(e.currentTarget);
+    const name = form.get('name')
+    const photo = form.get('photo')
+    const email = form.get('email')
+    const password = form.get('password')
+    console.log(name, photo, email, password);
+
+    // create user
+    createUser(email, password)
+    .then(result =>{
+      console.log(result)
+    })
+    .catch(error =>{
+      console.log(error)
+      setRegisterError(error.message);
+
+    })
+
+    // checked 
+    if (password.length < 6) {
+      setRegisterError("Password should be at least 6 characters");
+      return;
+    }
+    else if (!/[A-Z]/.test(password)){
+      setRegisterError('give me a strong password')
+      return;
+    }
+
+    // reset massage and success
+    setRegisterError("");
+  };
+
 
   return (
     <div className="hero min-h-screen bg-base-200">
@@ -21,7 +57,7 @@ const Register = () => {
           <h1 className="text-5xl font-bold">Register now!</h1>
         </div>
         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+          <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Name</span>
@@ -32,26 +68,19 @@ const Register = () => {
                 placeholder="Enter Your Name"
                 className="input input-bordered"
                 required
-                {...register("Name", { required: true })}
               />
-              {errors.Name?.type === "required" && (
-                <p role="toast">First name is required</p>
-              )}
+              
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Photo</span>
               </label>
               <input
-                type="email"
+                type="text"
                 name="photo"
                 placeholder="Enter Your Photo Url"
                 className="input input-bordered"
-                {...register("Name", { required: true })}
               />
-              {errors.Name?.type === "required" && (
-                <p role="toast">First name is required</p>
-              )}
             </div>
             <div className="form-control">
               <label className="label">
@@ -63,32 +92,41 @@ const Register = () => {
                 placeholder="Enter Your Email"
                 className="input input-bordered"
                 required
-                {...register("Name", { required: true })}
               />
-              {errors.Name?.type === "required" && (
-                <p role="toast">First name is required</p>
-              )}
             </div>
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
+              <div className="flex text-center items-center">
               <input
-                type="password"
+                type={showPassword ? 'text' : "password"}
                 name="password"
-                placeholder="Enter Your Password"
-                className="input input-bordered"
+                placeholder="Enter a Password"
+                className="input input-bordered w-full"
                 required
-                {...register("Name", { required: true })}
               />
-              {errors.Name?.type === "required" && (
-                <p role="toast">First name is required</p>
-              )}
+              <span className=" end-10 absolute" onClick={() => {
+                setShowPassword(!showPassword)
+              }}>
+                {
+                  showPassword ? <FaRegEyeSlash/> : <FaRegEye/>
+                }
+              </span>
+              </div>
             </div>
             <div className="form-control mt-6">
               <button className="btn btn-primary">Register</button>
             </div>
           </form>
+          {/* error showing on display */}
+          {registerError && <p className=" text-red-700">{registerError}</p>}
+          <p className=" text-center mt-4">
+          Already have an account{" "}
+          <Link to="/login" className=" underline ml-1 text-blue-500 font-bold">
+            Login
+          </Link>
+        </p>
         </div>
       </div>
     </div>

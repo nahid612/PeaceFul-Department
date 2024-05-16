@@ -9,6 +9,7 @@ import AuthProvider from "./AuthProvider/AuthProvider";
 import Categories from "./pages/Categories/Categories";
 import UpadateProfile from "./pages/UpadateProfile/UpadateProfile";
 import Register from "./Component/Register";
+import Login from "./Component/Login";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
       }
     ],
   },
