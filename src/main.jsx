@@ -8,6 +8,7 @@ import NotFound from "./Component/NotFound";
 import AuthProvider from "./AuthProvider/AuthProvider";
 import Categories from "./pages/Categories/Categories";
 import UpadateProfile from "./pages/UpadateProfile/UpadateProfile";
+import Register from "./Component/Register";
 
 const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ const router = createBrowserRouter([
       {
         path: '/updateprofile',
         element: <UpadateProfile></UpadateProfile>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       }
     ],
   },
