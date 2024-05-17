@@ -1,11 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
-import { useContext, useState } from "react";
+import {  useState } from "react";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaRegEye , FaRegEyeSlash } from "react-icons/fa6";
+import useAuthContext from "../Hook/useAuthContext";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
-    const {signUser} = useContext(AuthContext)
+    const {signUser} = useAuthContext()
     const [showPassword, setShowPassword] = useState(false)
 
 
@@ -76,6 +77,9 @@ const Login = () => {
             Register
           </Link>
         </p>
+        <hr className="my-3 mx-5"/>
+        <p className="mb-2 text-center">Continue with</p>
+        <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>
