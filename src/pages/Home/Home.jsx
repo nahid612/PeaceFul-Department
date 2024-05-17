@@ -1,8 +1,14 @@
+import Banner from "../../Component/Banner";
+import Footer from "../../Component/Footer";
+import Student from "../Categories/Student";
 
 const Home = () => {
     return (
         <div>
-            <h2>this is home</h2>
+            <Banner></Banner>
+            <Student></Student>
+            <Footer></Footer>
+            
         </div>
     );
 };

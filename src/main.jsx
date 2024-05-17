@@ -10,6 +10,7 @@ import Categories from "./pages/Categories/Categories";
 import UpadateProfile from "./pages/UpadateProfile/UpadateProfile";
 import Register from "./Component/Register";
 import Login from "./Component/Login";
+import Appertment from "./pages/Categories/Appertment/Appertment";
 
 const router = createBrowserRouter([
   {
@@ -36,7 +37,15 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login></Login>
-      }
+      },
+      {
+        path: '/categories/appertment',
+        element: <Appertment></Appertment>
+      },
+      {
+        path: '/categories/student',
+        element: <Appertment></Appertment>
+      },
     ],
   },
 ]);

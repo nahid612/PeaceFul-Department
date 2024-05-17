@@ -17,12 +17,12 @@ const Navber = () => {
         </NavLink>
       </li>
       <li>
-        <details>
+        <details className="dropdown dropdown-hover">
           <summary>
             <NavLink
               className={({ isActive }) =>
                 isActive
-                  ? " text-green-500 font-bold border border-green-600"
+                  ? " text-green-500 font-bold border border-green-600  dropdown dropdown-hover"
                   : "font-medium"
               }
               to="/categories"
@@ -38,9 +38,9 @@ const Navber = () => {
                     ? "text-green-500 font-bold border border-green-600"
                     : "font-medium"
                 }
-                to="/categories"
+                to="/categories/appertment"
               >
-                Students
+                Appertment
               </NavLink>
             </li>
             <li>
@@ -50,9 +50,9 @@ const Navber = () => {
                     ? "text-green-500 font-bold border border-green-600"
                     : " font-medium"
                 }
-                to="/categories"
+                to="/categories/student"
               >
-                Rent
+                Student
               </NavLink>
             </li>
             
@@ -116,18 +116,18 @@ const Navber = () => {
           user?.email ? <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="" alt="" />
+                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
               </div>
             </label>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
               <li>
-                <button className="btn btn-sm">Nahid</button>
+                <p className="text-xl text-center font-semibold my-1">Nahid</p>
               </li>
               <li>
-                <button className="btn btn-sm">gmail</button>
+                <p className="text-center items-center">gmail</p>
               </li>
               <li>
-                <button onClick={signOut} className="btn btn-primary btn-sm">LogOut</button>
+                <button onClick={signOut} className="btn btn-primary btn-sm my-2">LogOut</button>
               </li>  
             </ul>
           </div>
