@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import useAuthContext from "../Hook/useAuthContext";
 
 const Navber = () => {
   const navlinks = (
@@ -73,6 +74,9 @@ const Navber = () => {
     </>
   );
 
+  // signout
+  const {signOut, user} = useAuthContext()
+
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -105,10 +109,33 @@ const Navber = () => {
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
       </div>
+
+      {/* ---------------- */}
       <div className="navbar-end">
-        <Link to='/login'>
-        <a className="btn">Login</a>
-        </Link>
+        {
+          user?.email ? <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src="" alt="" />
+              </div>
+            </label>
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li>
+                <button className="btn btn-sm">Nahid</button>
+              </li>
+              <li>
+                <button className="btn btn-sm">gmail</button>
+              </li>
+              <li>
+                <button onClick={signOut} className="btn btn-primary btn-sm">LogOut</button>
+              </li>  
+            </ul>
+          </div>
+          :
+          <Link to='/login'>
+          <a className="btn">Login</a>
+          </Link>
+        }
       </div>
     </div>
   );
