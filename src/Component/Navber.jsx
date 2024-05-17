@@ -50,9 +50,21 @@ const Navber = () => {
                     ? "text-green-500 font-bold border border-green-600"
                     : " font-medium"
                 }
+                to="/categories/family"
+              >
+                Family Room
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                className={({ isActive }) =>
+                  isActive
+                    ? "text-green-500 font-bold border border-green-600"
+                    : " font-medium"
+                }
                 to="/categories/student"
               >
-                Student
+                Student Room
               </NavLink>
             </li>
             

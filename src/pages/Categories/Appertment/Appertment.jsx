@@ -5,7 +5,7 @@ const Appertment = () => {
   return (
     <div className="mt-16">
       <p className=" text-4xl font-semibold text-center">
-      Rooms & Apartments
+      Apartments & Rooms
       </p>
       <hr className="mb-10 mt-2" />
 
