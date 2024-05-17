@@ -5,25 +5,22 @@ import { MdOutlinePool } from "react-icons/md";
 import { TbToolsKitchen2 } from "react-icons/tb";
 
 
-const Family = () => {
+const Family = ({appertment}) => {
+  const {image,estate_title, segment_name,description,price,status,} = appertment
   return (
     <div className="mt-16">
-      <p className=" text-4xl font-semibold text-center">
-        Family Leaving Room
-      </p>
-      <hr className="mb-10 mt-2" />
-
+      
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img
-            src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
+            src={image}
             alt="Shoes"
           />
         </figure>
         <div className="card-body">
-          <h2 className="card- text-xl font-bold ">Only For Family </h2>
-          <h3 className=" text-lg ">Quality: </h3>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
+          <h2 className="card- text-xl font-bold ">Only For Family</h2>
+          <h3 className=" text-lg ">Quality: {segment_name} </h3>
+          <p>{description}</p>
           <div className="flex justify-between">
             <p className="flex items-center gap-1">
               <CiLocationOn />
@@ -34,11 +31,12 @@ const Family = () => {
               <span>Area: sq ft</span>
             </p>
           </div>
-          <h5 className="text-xl font-bold text-black">Price: </h5>
+          <div className="flex justify-between">
+          <h5 className="text-xl font-bold text-black">Price: {price}</h5>
+          <h5 className="text-xl font-bold text-black"> For: {status}</h5>
+          </div>
           <div className="card-actions justify-end">
-            <button className="btn  btn-outline btn-primary">
-              View Details
-            </button>
+            <button className="btn  btn-outline btn-primary">View Details</button>
           </div>
         </div>
       </div>

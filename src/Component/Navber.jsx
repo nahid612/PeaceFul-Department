@@ -50,7 +50,7 @@ const Navber = () => {
                     ? "text-green-500 font-bold border border-green-600"
                     : " font-medium"
                 }
-                to="/categories/family"
+                to="/family"
               >
                 Family Room
               </NavLink>

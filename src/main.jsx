@@ -12,6 +12,7 @@ import Register from "./Component/Register";
 import Login from "./Component/Login";
 import Appertment from "./pages/Categories/Appertment/Appertment";
 import Family from "./pages/Categories/Family";
+import AppertmentDetails from "./pages/Categories/Appertment/AppertmentDetails";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+        loader: () =>fetch('data.json')
       },
       {
         path: '/categories',
@@ -44,7 +46,17 @@ const router = createBrowserRouter([
         element: <Appertment></Appertment>
       },
       {
-        path: '/categories/family',
+        path: 'appertmentdetails/:id',
+        element: <AppertmentDetails></AppertmentDetails>,
+        loader: async ({params}) =>{
+          const res = await fetch('/data.json')
+          const data = await res.json()
+          const appert = data.find(info => info.id == params.id)
+          return appert
+        }
+      },
+      {
+        path: '/family',
         element: <Family></Family>
       },
       {
