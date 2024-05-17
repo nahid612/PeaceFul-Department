@@ -1,7 +1,11 @@
 import { CiLocationOn } from "react-icons/ci";
 import { PiMapPinSimpleAreaLight } from "react-icons/pi";
+import { MdOutlineBedroomParent } from "react-icons/md";
+import { MdOutlinePool } from "react-icons/md";
+import { TbToolsKitchen2 } from "react-icons/tb";
 
-const Student = () => {
+
+const Family = () => {
   return (
     <div className="mt-16">
       <p className=" text-4xl font-semibold text-center">
@@ -17,7 +21,7 @@ const Student = () => {
           />
         </figure>
         <div className="card-body">
-          <h2 className="card- text-xl font-bold ">Only For Student </h2>
+          <h2 className="card- text-xl font-bold ">Only For Family </h2>
           <h3 className=" text-lg ">Quality: </h3>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="flex justify-between">
@@ -32,7 +36,9 @@ const Student = () => {
           </div>
           <h5 className="text-xl font-bold text-black">Price: </h5>
           <div className="card-actions justify-end">
-            <button className="btn  btn-outline btn-primary">View Details</button>
+            <button className="btn  btn-outline btn-primary">
+              View Details
+            </button>
           </div>
         </div>
       </div>
@@ -40,4 +46,4 @@ const Student = () => {
   );
 };
 
-export default Student;
+export default Family;
