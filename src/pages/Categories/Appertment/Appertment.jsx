@@ -6,11 +6,12 @@ const Appertment = ({appertment}) => {
   const {image,estate_title, segment_name,description,price,status,area, location,id} = appertment
 
   return (
-    <div className="mt-16 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="mt-16  flex gap-10  grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
       
       <div className="card w-96 bg-base-100 shadow-xl">
         <figure>
           <img
+            className=" h-72"
             src={image}
             alt="Shoes"
           />

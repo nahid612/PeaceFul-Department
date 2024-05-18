@@ -13,6 +13,7 @@ import Login from "./Component/Login";
 import Appertment from "./pages/Categories/Appertment/Appertment";
 import Family from "./pages/Categories/Family";
 import AppertmentDetails from "./pages/Categories/Appertment/AppertmentDetails";
+import PrivateRoute from "./Component/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,45 +24,49 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>fetch('data.json')
+        loader: () => fetch("data.json"),
       },
       {
-        path: '/categories',
+        path: "/categories",
         element: <Categories></Categories>,
       },
       {
-        path: '/updateprofile',
-        element: <UpadateProfile></UpadateProfile>
+        path: "/updateprofile",
+        element: <UpadateProfile></UpadateProfile>,
       },
       {
-        path: '/register',
-        element: <Register></Register>
+        path: "/register",
+        element: <Register></Register>,
       },
       {
-        path: '/login',
-        element: <Login></Login>
+        path: "/login",
+        element: <Login></Login>,
       },
       {
-        path: '/categories/appertment',
-        element: <Appertment></Appertment>
+        path: "/categories/appertment",
+        element: <Appertment></Appertment>,
       },
       {
-        path: 'appertmentdetails/:id',
-        element: <AppertmentDetails></AppertmentDetails>,
-        loader: async ({params}) =>{
-          const res = await fetch('/data.json')
-          const data = await res.json()
-          const appert = data.find(info => info.id == params.id)
-          return appert
-        }
+        path: "appertmentdetails/:id",
+        element: (
+          <PrivateRoute>
+            <AppertmentDetails></AppertmentDetails>
+          </PrivateRoute>
+        ),
+        loader: async ({ params }) => {
+          const res = await fetch("/data.json");
+          const data = await res.json();
+          const appert = data.find((info) => info.id == params.id);
+          return appert;
+        },
       },
       {
-        path: '/family',
-        element: <Family></Family>
+        path: "/family",
+        element: <Family></Family>,
       },
       {
-        path: '/categories/student',
-        element: <Appertment></Appertment>
+        path: "/categories/student",
+        element: <Appertment></Appertment>,
       },
     ],
   },

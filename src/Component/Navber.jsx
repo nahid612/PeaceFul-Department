@@ -76,7 +76,7 @@ const Navber = () => {
           className={({ isActive }) =>
             isActive
               ? "text-green-500 font-bold border border-green-600"
-              : "font-bold"
+              : "font-medium"
           }
           to="/updateprofile"
         >
