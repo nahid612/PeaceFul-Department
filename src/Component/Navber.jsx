@@ -116,7 +116,7 @@ const Navber = () => {
             {navlinks}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl">PeaceFul-Department</a>
+        <a className="btn btn-ghost lg:text-2xl md:text-xl text-lg font-bold">PeaceFul-Department</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navlinks}</ul>
