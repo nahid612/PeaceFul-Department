@@ -4,9 +4,9 @@ import useAuthContext from "../Hook/useAuthContext";
 const SocialLogin = () => {
   const { googleLogin, githubLogin } = useAuthContext();
 
+  // navigate
   const navigate = useNavigate();
   const location = useLocation();
-  // console.log(location)
   const from = location?.state || "/";
 
   const handleSocialLogin = (socialProvider) => {
@@ -18,7 +18,7 @@ const SocialLogin = () => {
     });
   };
   return (
-    <div className="flex gap-3 justify-around pb-5 ">
+    <div className="flex gap-3 pb-5 ">
       <button
         onClick={() => handleSocialLogin(googleLogin)}
         className="btn btn-outline btn-primary btn-sm"

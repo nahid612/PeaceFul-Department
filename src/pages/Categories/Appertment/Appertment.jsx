@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { CiLocationOn } from "react-icons/ci";
 import { PiMapPinSimpleAreaLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
@@ -8,7 +9,7 @@ const Appertment = ({appertment}) => {
   return (
     <div className="mt-16  flex gap-10  grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
       
-      <div className="card w-96 bg-base-100 shadow-xl">
+      <div className="card flex gap-10  grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3 w-96 bg-base-100 shadow-xl">
         <figure>
           <img
             className=" h-72"

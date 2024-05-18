@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import {  useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaRegEye , FaRegEyeSlash } from "react-icons/fa6";
 import useAuthContext from "../Hook/useAuthContext";
 import SocialLogin from "./SocialLogin";
@@ -9,6 +9,10 @@ const Login = () => {
     const {signUser} = useAuthContext()
     const [showPassword, setShowPassword] = useState(false)
 
+     // navigate
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state || "/";
 
     const handleSignIn = e =>{
         e.preventDefault()
@@ -18,9 +22,13 @@ const Login = () => {
         const password = form.get('password')
         console.log(form.get('email'))
         console.log(email, password)
+
+        
         signUser(email, password)
-        .then(result =>{
-          console.log(result.user)
+        .then((result) => {
+          if (result.user) {
+            navigate(from);
+          }
         })
         .catch(error =>{
           console.log(error)

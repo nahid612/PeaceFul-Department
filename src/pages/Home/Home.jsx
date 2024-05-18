@@ -29,7 +29,15 @@ const Home = () => {
           <Family key={appertment.id} appertment={room}></Family>
         ))}
       </div>
-      <Student></Student>
+      <div>
+        <p className=" text-4xl font-semibold text-center">
+          Leaving room for Student
+        </p>
+        <hr className="mb-10 mt-2 flex gap-10  grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3" />
+        {appertment.map((room) => (
+          <Student key={appertment.id} appertment={room}></Student>
+        ))}
+      </div>
       <Footer></Footer>
     </div>
   );
