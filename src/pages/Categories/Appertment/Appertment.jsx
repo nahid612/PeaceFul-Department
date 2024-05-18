@@ -3,7 +3,7 @@ import { PiMapPinSimpleAreaLight } from "react-icons/pi";
 import { Link } from "react-router-dom";
 
 const Appertment = ({appertment}) => {
-  const {image,estate_title, segment_name,description,price,status, id} = appertment
+  const {image,estate_title, segment_name,description,price,status,area, location,id} = appertment
 
   return (
     <div className="mt-16 grid grid-cols-1 gap-x-4 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
@@ -22,11 +22,11 @@ const Appertment = ({appertment}) => {
           <div className="flex justify-between">
             <p className="flex items-center gap-1">
               <CiLocationOn />
-              <span>Location: </span>
+              <span>Location: {location} </span>
             </p>
             <p className="flex items-center gap-1">
               <PiMapPinSimpleAreaLight />
-              <span>Area: sq ft</span>
+              <span>Area: {area} sq ft</span>
             </p>
           </div>
           <div className="flex justify-between">

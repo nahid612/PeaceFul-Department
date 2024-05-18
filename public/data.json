@@ -1,6 +1,6 @@
 [
       {
-        "image":"https://i.postimg.cc/90VPzdSz/abdullah-al-mamun-dot-Sodu-Pd-CY-unsplash.jpg",
+        "image":"https://i.postimg.cc/FFk3rPHP/micah-carlson-q-N-T-p-Y17-Vc-unsplash.jpg",
         "estate_title": "Modern Condo with City View",
         "id": "001",
         "segment_name": "Premium",
@@ -13,7 +13,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image2.jpg",
+        "image": "https://i.postimg.cc/SN08JWXm/krzysztof-hepner-V7-Q0-Oh3-Az-c-unsplash-1.jpg",
         "estate_title": "Classic Brownstone in Historic District",
         "id": "002",
         "segment_name": "Standard",
@@ -26,7 +26,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image3.jpg",
+        "image": "https://i.postimg.cc/CxSq4SHt/ibrahim-rifath-wj6-Qz24kw-UA-unsplash-1.jpg",
         "estate_title": "Luxury Penthouse with Panoramic Views",
         "id": "003",
         "segment_name": "Luxury",
@@ -39,7 +39,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image4.jpg",
+        "image": "https://i.postimg.cc/cJJtVhzB/aubrey-odom-ITzfg-P77-DTg-unsplash.jpg",
         "estate_title": "Family Home in Suburban Oasis",
         "id": "004",
         "segment_name": "Standard",
@@ -52,7 +52,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image5.jpg",
+        "image": "https://i.postimg.cc/SN08JWXm/krzysztof-hepner-V7-Q0-Oh3-Az-c-unsplash-1.jpg",
         "estate_title": "Seaside Cottage with Private Beach Access",
         "id": "005",
         "segment_name": "Standard",
@@ -65,7 +65,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image6.jpg",
+        "image": "https://i.postimg.cc/gJXX0Jmw/dan-gold-4-HG3-Ca3-Ez-Ww-unsplash.jpg",
         "estate_title": "Urban Loft with Industrial Chic",
         "id": "006",
         "segment_name": "Premium",
@@ -78,7 +78,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image7.jpg",
+        "image": "https://i.postimg.cc/PxgLvj5S/scott-webb-1ddol8rg-UH8-unsplash.jpg",
         "estate_title": "Elegant Mansion with Landscaped Gardens",
         "id": "007",
         "segment_name": "Luxury",
@@ -91,7 +91,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image8.jpg",
+        "image": "https://i.postimg.cc/SQ9YFJg3/francesca-tosolini-h-CU4fim-RW-c-unsplash.jpg",
         "estate_title": "Mountain Retreat with Scenic Views",
         "id": "008",
         "segment_name": "Standard",
@@ -104,7 +104,7 @@
         "button_text": "View Property"
       },
       {
-        "image": "path/to/image9.jpg",
+        "image": "https://i.postimg.cc/TYXLRfSw/mark-champs-Id2-IIl1j-OB0-unsplash.jpg",
         "estate_title": "Contemporary Townhouse with Urban Convenience",
         "id": "009",
         "segment_name": "Premium",
