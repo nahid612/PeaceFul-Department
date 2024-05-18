@@ -1,4 +1,5 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+/* eslint-disable react/prop-types */
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../firebase/firebase.config";
 
@@ -11,33 +12,52 @@ const githubProvider = new GithubAuthProvider()
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  console.log(user)
+
+  // loader
+  const [loading, setLoading]= useState(true)
+  console.log(loading)
+
+  // Update User Profile
+  const updateUserProfile = (name, image, text) =>{
+    return updateProfile(auth.currentUser, {
+      displayName: name,
+       photoURL: image,
+       email: text
+    })
+  }
+
 
   // creating user
   const createUser = (email, password) => {
+    setLoading(true)
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
   // Observer
   useEffect(() =>{
-    onAuthStateChanged(auth, (user) => {
+   const unSubscribe = onAuthStateChanged(auth, (user) => {
         setUser(user)
+    setLoading(false)
+
     });
+    return () => unSubscribe
   },[])
 
   // sign in user
   const signUser = (email, password) =>{
+    setLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
 
   // google login
   const googleLogin = () =>{
-    setUser(null)
+    setLoading(true)
     return signInWithPopup(auth, googleProvider)
   }
 
   // github login
   const githubLogin = () =>{
+    setLoading(true)
     return signInWithPopup(auth, githubProvider)
   }
 
@@ -54,6 +74,8 @@ const AuthProvider = ({ children }) => {
     googleLogin,
     githubLogin,
     signOut,
+    loading,
+    updateUserProfile
   };
 
   return (

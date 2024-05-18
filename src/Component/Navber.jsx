@@ -128,15 +128,15 @@ const Navber = () => {
           user?.email ? <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" alt="" />
+                <img src={user?.photoURL || "https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" } alt="" />
               </div>
             </label>
-            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-auto">
               <li>
-                <p className="text-xl text-center font-semibold my-1">Nahid</p>
+                <p className="text-xl text-center font-semibold my-1">{user?.displayName || 'user name Undefined'}</p>
               </li>
               <li>
-                <p className="text-center items-center">gmail</p>
+                <p className="text-center items-center">{user.email}</p>
               </li>
               <li>
                 <button onClick={signOut} className="btn btn-primary btn-sm my-2">LogOut</button>

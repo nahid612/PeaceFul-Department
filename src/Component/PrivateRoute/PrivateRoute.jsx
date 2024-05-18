@@ -3,9 +3,14 @@ import useAuthContext from "../../Hook/useAuthContext";
 
 
 const PrivateRoute = ({children}) => {
-    const {user} = useAuthContext()
+    const {user, loading} = useAuthContext()
     const location = useLocation()
-    // console.log(location)
+    console.log(location)
+
+    if(loading){
+        return <span className="loading loading-bars loading-lg text-center"></span>
+
+    }
 
     if(!user) {
         return <Navigate to='/login' state={location?.pathname || '/'}/>

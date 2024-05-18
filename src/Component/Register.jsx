@@ -4,7 +4,7 @@ import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import useAuthContext from "../Hook/useAuthContext";
 
 const Register = () => {
-  const { createUser } = useAuthContext();
+  const { createUser,updateUserProfile} = useAuthContext();
   const [registerError, setRegisterError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
@@ -22,13 +22,19 @@ const Register = () => {
     const photo = form.get("photo");
     const email = form.get("email");
     const password = form.get("password");
-    console.log(name, photo, email, password);
+    const fullName = from.get('fullName')
+    const image = from.get('image')
+    console.log(name, photo, email, password, fullName, image);
 
    
 
     // create user
     createUser(email, password)
       .then((result) => {
+        updateUserProfile(fullName, image, email)
+        .then( () =>{
+          
+        })
         if (result.user) {
           navigate(from);
         }
